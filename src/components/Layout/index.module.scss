@@ -1,16 +1,18 @@
 @import "../../styles/colors.module";
-.layout{
+
+.layout {
   display: flex;
   flex-direction: row;
   height: 100vh;
 }
-.menu{
+
+.menu {
   padding: 25px 0 10px 12px;
   width: 94px;
   background: $bg-dark;
 }
 
-.content{
+.content {
   display: block;
   box-sizing: border-box;
   width: calc(100vw - 106px);

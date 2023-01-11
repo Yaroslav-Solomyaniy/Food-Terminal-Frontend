@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap');
-@import '../node_modules/@csstools/normalize.css';
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap");
+@import "../node_modules/@csstools/normalize.css";
 
 body {
-    background: #252836;
-    font-size: 14px;
-    box-sizing: border-box;
-    font-family: 'Barlow', sans-serif;
-    margin: 0;
-    font-weight: 600;
+  background: #252836;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: "Barlow", sans-serif;
+  margin: 0;
+  font-weight: 600;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-svg{
-    width: 24px;
-    height: 24px;
+svg {
+  width: 24px;
+  height: 24px;
 }
