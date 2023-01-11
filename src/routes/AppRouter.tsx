@@ -14,7 +14,14 @@ import DiscountSettings from '../page/Discount';
 const appRouter = () => (
   <Routes>
     <Route index element={<SignIn />} />
-    <Route path="/registration" element={<AuthProvider><SignUp /></AuthProvider>} />
+    <Route
+      path="/signUp"
+      element={(
+        <AuthProvider>
+          <SignUp />
+        </AuthProvider>
+      )}
+    />
 
     <Route path="/menu" element={<Menu />} />
     <Route path="/profile" element={<Profile />} />
@@ -26,7 +33,6 @@ const appRouter = () => (
     <Route path="/discount" element={<DiscountSettings />} />
 
     <Route path="/stats" element={<Stats />} />
-
   </Routes>
 );
 

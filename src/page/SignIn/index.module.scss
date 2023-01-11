@@ -28,20 +28,22 @@
   margin-top: 50px;
 }
 
-.registration{
+.signUp {
   margin-top: 40px;
   font-size: 1.1rem;
   color: $base;
   display: flex;
-  &__link{
+
+  &__link {
     margin-left: 10px;
     color: $base-white;
+
     &:focus, :active {
       color: $accents-green;
     }
   }
 }
 
-.input_password{
+.input_password {
   margin-top: 15px;
 }

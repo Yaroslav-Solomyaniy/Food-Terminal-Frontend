@@ -7,13 +7,16 @@ import Panda from '../../components/Panda';
 
 import styles from './index.module.scss';
 
-interface ISignInParams{
+interface ISignInParams {
   email: string;
   password: string;
 }
 
 const SignIn = () => {
-  const [loginData, setLoginData] = useState<ISignInParams>({ email: '', password: '' });
+  const [loginData, setLoginData] = useState<ISignInParams>({
+    email: '',
+    password: '',
+  });
 
   return (
     <div className={styles.login}>
@@ -39,17 +42,22 @@ const SignIn = () => {
             nameClass={styles.input_password}
           />
 
-          <Button onClick={() => Navigate({ to: '/menu' })} nameClass={styles.submit_button}>Увійти</Button>
-          <div className={styles.registration}>
-            <div className={styles.registration__title}>Не є клієнтом системи?</div>
-            <Link to="/registration" className={styles.registration__link}> Зареєструйтесь!</Link>
+          <Button
+            onClick={() => Navigate({ to: '/menu' })}
+            nameClass={styles.submit_button}
+          >
+            Увійти
+          </Button>
+          <div className={styles.signUp}>
+            <div className={styles.signUp__title}>Не є клієнтом системи?</div>
+            <Link to="/signUp" className={styles.signUp__link}>
+              Зареєструйтесь!
+            </Link>
           </div>
         </form>
-
       </div>
       <Panda />
     </div>
-
   );
 };
 
