@@ -1,5 +1,4 @@
 {
-  "files": ["./node_modules/wmr/types.d.ts"],
   "compilerOptions": {
     "target": "es5",
     "lib": [

@@ -10,7 +10,7 @@ interface IAxiosInterceptor{
 const AxiosInterceptor = ({ children }:IAxiosInterceptor) => {
   $api.interceptors.request.use((config:AxiosRequestConfig) => {
     // eslint-disable-next-line no-param-reassign
-    (config.headers ??= {}).Authorization = `Bearer ${JSON.parse(sessionStorage.accessToken)}`;
+    // (config.headers ??= {}).Authorization = `Bearer ${JSON.parse(sessionStorage.accessToken)}`;
 
     return config;
   });

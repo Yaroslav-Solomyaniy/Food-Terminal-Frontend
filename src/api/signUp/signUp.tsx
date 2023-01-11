@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
-import Alert from '@mui/material/Alert/Alert';
-import { AlertTitle } from '@mui/material';
 
 export interface ISignUpParams {
   email: string;
@@ -37,7 +35,7 @@ export const useSignUp = (): IUseSignUp => {
   const signUp = (params: ISignUpParams) => {
     axios.post(`${process.env.REACT_APP_API_URL}/api/auth/signUp`, params, { })
       .then((response: AxiosResponse<ISignUpData | null>) => {
-        <AlertTitle>Success</AlertTitle>
+        console.log(response.data);
       });
   };
 

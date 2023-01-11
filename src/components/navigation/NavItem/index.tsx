@@ -17,7 +17,7 @@ const NavItem = ({ to, ico }:INavItem) => {
     if (location.pathname === to) {
       setIsActive(true);
     }
-  }, [location.pathname]);
+  }, [location.pathname, to]);
 
   return (
     <div className={clsx(styles.box, isActive && styles.active_box)}>
