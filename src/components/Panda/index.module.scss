@@ -1,0 +1,57 @@
+@import "../../styles/colors.module";
+.animate {
+  animation: linear 15s infinite goto;
+}
+
+@keyframes goto {
+  from {
+    transform: translateX(-20vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+
+.object {
+  position: fixed;
+  bottom: -110px;
+  left: 7vw;
+  height: 300px;
+}
+
+.panda {
+  position: relative;
+  height: 200px;
+  z-index: 2;
+  transform: rotateZ(-5deg);
+}
+
+.stick {
+  position: absolute;
+  bottom: 210px;
+  right: 100px;
+  height: 150px;
+  transform: rotateY(180deg);
+}
+
+.flag {
+  position: absolute;
+  top: -15px;
+  left: -45px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.flag_food {
+  color: $base;
+  font-size: 14px;
+}
+
+.flag_terminal {
+  font-size: 14px;
+  color: $base-white;
+}
+

@@ -1,0 +1,18 @@
+@import "../../styles/colors.module";
+.layout{
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.menu{
+  padding: 25px 0 10px 12px;
+  width: 94px;
+  background: $bg-dark;
+}
+
+.content{
+  display: block;
+  box-sizing: border-box;
+  width: calc(100vw - 106px);
+  padding: 24px;
+}

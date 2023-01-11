@@ -1,0 +1,61 @@
+@import "../../styles/colors.module";
+
+.settings{
+  display: grid;
+  grid-template-columns: 20% auto;
+  grid-column-gap: 24px;
+  height: calc(100% - 82px);
+}
+
+
+.categories{
+  background: $bg-dark;
+  display: flex;
+  flex-direction: column;
+  color: $base-white;
+  border: 1px solid $base;
+  &_create{
+    height: 200px;
+    padding: 24px;
+    &__title{
+      margin: 0;
+      line-height: normal;
+      padding: 10px;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+  &_data{
+    height: 100%;
+    &__title{
+      margin: 0;
+      line-height: normal;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  &_item{
+    margin: 10px 0;
+    padding: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    &:hover{
+      background: $base;
+      cursor: pointer;
+    }
+  }
+}
+
+.line{
+  height: 2px;
+  background: $base;
+  margin: 10px 0;
+  border: none;
+}
+
+.eat{
+  background: $bg-dark;
+  padding: 24px;
+}

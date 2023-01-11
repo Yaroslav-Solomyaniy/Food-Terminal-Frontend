@@ -1,0 +1,29 @@
+@import "src/styles/variables.module";
+@import "src/styles/colors.module";
+
+.button {
+  width: $desktop-Width;
+  height: $desktop-Height;
+  background: $base;
+  padding: 14px 0;
+  box-shadow: 0 8px 24px rgba(234, 124, 105, 0.3);
+  border: 0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: $base-white;
+  font-weight: 600;
+
+  &:focus, &:focus-visible, &:active {
+    outline: none;
+    border: 0;
+  }
+
+  &_img {
+    background: transparent;
+    border: none;
+    color: $white;
+    &:hover, :focus {
+      color: $base;
+    }
+  }
+}

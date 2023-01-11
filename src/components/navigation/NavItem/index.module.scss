@@ -1,0 +1,53 @@
+@import "../../../styles/colors.module";
+.link{
+  background: transparent;
+  border: none;
+  color: $base;
+  height: 56px;
+  width: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover, &:focus{
+    color: $white;
+  }
+}
+.box{
+  padding: 13px 24px 11px 12px;
+}
+
+.active_link{
+  color: $white;
+  background: $base;
+  box-shadow: 0 8px 24px rgba(234, 124, 105, 0.32);
+  border-radius: 8px;
+}
+.active_box{
+  display: flex;
+  justify-content: center;
+  border-radius: 12px 0 0 12px;
+  background: $bg-light;
+  position: relative;
+
+  &::before {
+    content: 'a';
+    font-size: 0;
+    position: absolute;
+    top: -12px;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle at top left, $bg-dark 70%, $bg-light 30%)
+  }
+
+  &::after {
+    content: 'a';
+    font-size: 0;
+    position: absolute;
+    bottom: -12px;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle at bottom left, $bg-dark 70%, $bg-light 30%)
+  }
+}

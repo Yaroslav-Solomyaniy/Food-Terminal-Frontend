@@ -1,0 +1,39 @@
+.signUp{
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: inset 0 8px 24px rgba(234, 124, 105, 0.3);
+
+  &_inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+  }
+  &_columns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &_button{
+    width: auto;
+    margin-top: 30px;
+  }
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 10px;
+}
+.left_form{
+  align-self: center;
+}
+.input {
+  margin-top: 15px;
+}

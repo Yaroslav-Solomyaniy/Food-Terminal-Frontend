@@ -1,0 +1,20 @@
+@import "../../styles/colors.module.scss";
+
+.title_block {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.title {
+    color: $base;
+    font-size: 8rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 0;
+}
+
+.white_title {
+    color: $base-white;
+}

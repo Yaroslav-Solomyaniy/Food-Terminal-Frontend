@@ -1,0 +1,30 @@
+@import "../../styles/colors.module";
+
+.header{
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+
+  &_text{
+    display: flex;
+    flex-direction: column;
+  }
+  &_title{
+    margin: 0;
+    line-height: normal;
+    font-size: 28px;
+    font-weight: 600;
+    color: $white;
+  }
+  &_subtitle{
+    margin: 3px 0 0 0;
+    line-height: normal;
+    font-size: 18px;
+    font-weight: 400;
+    color: $white;
+  }
+}
+
+

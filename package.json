@@ -1,6 +1,6 @@
 {
-  "name": "food-terminal-frontend",
-  "version": "0.1.0",
+  "name": "Food-Terminal-Frontend",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -10,17 +10,38 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "airbnb": "^0.0.2",
+    "axios": "^1.2.2",
+    "clsx": "^1.2.1",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "node-sass": "^8.0.0",
+    "normalize.css": "^8.0.1",
+    "process-env": "^2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "sass-loader": "^13.2.0",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix --ext **/*.ts **/*.tsx",
+    "start": "env-cmd -f .env.local react-scripts  start",
+    "start:dev": "env-cmd -f .env.development react-scripts start",
+    "start:stage": "env-cmd -f .env.stage react-scripts start",
+    "build": "env-cmd -f .env.local react-scripts build",
+    "build:dev": "env-cmd -f .env.development react-scripts build",
+    "build:stage": "env-cmd -f .env.stage react-scripts build",
+    "deploy:dev": "firebase deploy --only hosting:development",
+    "deploy:stage": "firebase deploy --only hosting:stage",
+    "build-and-deploy:dev": "npm run lint && npm run build:dev && npm run deploy:dev",
+    "build-and-deploy:stage": "npm run lint && npm run build:stage && npm run deploy:stage",
+    "build-and-deploy:dev & stage": "npm run lint && npm run build:stage && npm run deploy:stage && npm run build:dev && npm run deploy:dev"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +60,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:3001"
 }

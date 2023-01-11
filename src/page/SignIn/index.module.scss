@@ -1,0 +1,47 @@
+@import "../../styles/colors.module";
+
+
+.login {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: inset 0 8px 24px rgba(234, 124, 105, 0.3);
+}
+
+.login_inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-top: 50px;
+}
+
+
+.submit_button {
+  margin-top: 50px;
+}
+
+.registration{
+  margin-top: 40px;
+  font-size: 1.1rem;
+  color: $base;
+  display: flex;
+  &__link{
+    margin-left: 10px;
+    color: $base-white;
+    &:focus, :active {
+      color: $accents-green;
+    }
+  }
+}
+
+.input_password{
+  margin-top: 15px;
+}

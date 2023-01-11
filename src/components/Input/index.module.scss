@@ -1,0 +1,30 @@
+@import "../../styles/colors.module";
+@import "src/styles/variables.module";
+.input_wrap{
+  position: relative;
+}
+.input {
+  box-sizing: border-box;
+  width: $desktop-Width;
+  height: $desktop-Height;
+  border-radius: 8px;
+  border: 1px solid $dark-line;
+  background: $form-bg;
+  color: $text-lighter;
+  padding: 14px;
+
+  &:focus, &:active {
+    outline: none;
+    border: 1px solid $base;
+  }
+}
+.password__button{
+  height: 48px;
+  padding: 10px 0 0 0;
+  background: transparent;
+  border: none;
+  color: $text-gray;
+  position: absolute;
+  right: 10px;
+  margin-top: 15px;
+}
