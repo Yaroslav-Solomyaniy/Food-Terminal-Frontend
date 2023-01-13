@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Title from '../../components/Title';
 import Panda from '../../components/Panda';
 
 import styles from './index.module.scss';
+import { AuthContext } from '../../context/Auth';
 
 interface ISignInParams {
   email: string;
@@ -17,6 +19,11 @@ const SignIn = () => {
     email: '',
     password: '',
   });
+  const { signIn } = AuthContext();
+
+  const changePage = () => {
+    signIn?.signIn(loginData);
+  };
 
   return (
     <div className={styles.login}>
@@ -42,10 +49,7 @@ const SignIn = () => {
             nameClass={styles.input_password}
           />
 
-          <Button
-            onClick={() => Navigate({ to: '/menu' })}
-            nameClass={styles.submit_button}
-          >
+          <Button onClick={changePage} nameClass={styles.submit_button}>
             Увійти
           </Button>
           <div className={styles.signUp}>

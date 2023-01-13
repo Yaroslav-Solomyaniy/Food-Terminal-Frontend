@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from '../index.module.scss';
 import Input from '../../../components/Input';
-import { ISignUpParams } from '../../../api/signUp/signUp';
+import { ISignUpParams } from '../../../api/auth/signUp';
 
-interface IRegisterLeftForm{
+interface IRegisterLeftForm {
   data: ISignUpParams;
   setData: (value: ISignUpParams) => void;
 }
 
-const RegisterRightForm = ({ data, setData }:IRegisterLeftForm) => (
+const RegisterRightForm = ({ data, setData }: IRegisterLeftForm) => (
   <form className={styles.form}>
     <Input
       type="text"

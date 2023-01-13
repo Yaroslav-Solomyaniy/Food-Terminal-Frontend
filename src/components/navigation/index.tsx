@@ -1,19 +1,30 @@
 import React from 'react';
-import { Discount, Exit, Home, OrderList, Orders, Profile, Settings, Stats } from '../SVG';
+import {
+  Discount,
+  Exit,
+  Home,
+  OrderList,
+  Orders,
+  Profile,
+  Settings,
+  Stats,
+} from '../SVG';
 import NavItem from './NavItem';
 import styles from './index.module.scss';
+import { checkLinksByRole } from '../../hooks/checkLinksByRole';
+import { AuthContext } from '../../context/Auth';
 
-interface IRoute{
+export interface IRoute {
   description: string;
   ico: JSX.Element;
   to: string;
   role: string[];
 }
 
-const Routes:IRoute[] = [
+const Routes: IRoute[] = [
   {
     description: 'Меню їжі',
-    to: '/menu',
+    to: '/',
     ico: <Home />,
     role: ['user', 'admin', 'moderator'],
   },
@@ -49,18 +60,22 @@ const Routes:IRoute[] = [
   },
 ];
 
-const Navigation = () => (
-  <div className={styles.navbar}>
-    <div className={styles.user_links}>
-      {Routes.filter((route) => route.role.includes('admin')).map((item) => (
-        <NavItem key={item.to} to={item.to} ico={item.ico} />
-      ))}
+const Navigation = () => {
+  const { user } = AuthContext();
+
+  return (
+    <div className={styles.navbar}>
+      <div className={styles.user_links}>
+        {checkLinksByRole(Routes, user?.roles || []).map((item) => (
+          <NavItem key={item.to} to={item.to} ico={item.ico} />
+        ))}
+      </div>
+      <div>
+        <NavItem to="/profile" ico={<Profile />} />
+        <NavItem to="/" ico={<Exit />} isLogOut />
+      </div>
     </div>
-    <div className={styles.default_link}>
-      <NavItem to="/profile" ico={<Profile />} />
-      <NavItem to="/" ico={<Exit />} />
-    </div>
-  </div>
-);
+  );
+};
 
 export default Navigation;

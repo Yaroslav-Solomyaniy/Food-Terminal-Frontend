@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
+import { Message } from '../../hooks/Message';
 
 export interface ISignUpParams {
   email: string;
@@ -11,17 +12,8 @@ export interface ISignUpParams {
 }
 
 export interface ISignUpData {
-  token: string;
-  user: {
-    id: number;
-    email: string;
-    firstName: string;
-    lastName: string;
-    surName: string;
-    isBanned: boolean;
-    banReason: string;
-    roles: string[];
-  };
+  message: 'Ви успішно зареєструвались';
+  isSuccesfull: true;
 }
 
 export interface IUseSignUp {
@@ -34,9 +26,13 @@ export const useSignUp = (): IUseSignUp => {
 
   const signUp = (params: ISignUpParams) => {
     axios
-      .post(`${process.env.REACT_APP_API_URL}/api/auth/signUp`, params, {})
+      .post(`${process.env.REACT_APP_API_URL}/api/auth/signUp`, params)
       .then((response: AxiosResponse<ISignUpData | null>) => {
-        console.log(response.data);
+        setData(response.data);
+        Message(response.data?.message || '', 'success');
+      })
+      .catch((e) => {
+        Message(e.response.data.message, 'error');
       });
   };
 

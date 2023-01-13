@@ -3,13 +3,12 @@ import { NavLink, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import styles from './index.module.scss';
 
-interface INavItem{
+interface INavItem {
   to: string;
   ico: JSX.Element;
-
 }
 
-const NavItem = ({ to, ico }:INavItem) => {
+const NavItem = ({ to, ico }: INavItem) => {
   const [isActive, setIsActive] = useState<boolean>();
   const location = useLocation();
 
@@ -21,11 +20,18 @@ const NavItem = ({ to, ico }:INavItem) => {
 
   return (
     <div className={clsx(styles.box, isActive && styles.active_box)}>
-      <NavLink to={to} className={clsx(styles.link, isActive && styles.active_link)}>
+      <NavLink
+        to={to}
+        className={clsx(styles.link, isActive && styles.active_link)}
+      >
         {ico}
       </NavLink>
     </div>
   );
+};
+
+NavItem.defaultProps = {
+  isLogOut: false,
 };
 
 export default NavItem;
