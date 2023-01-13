@@ -1,4 +1,4 @@
-import { IRoute } from '../components/navigation';
+import { IRoute } from '../components/Navigation';
 
 export const checkLinksByRole = (
   ListRoutes: IRoute[],

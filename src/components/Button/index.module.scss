@@ -13,6 +13,10 @@
   color: $base-white;
   font-weight: 600;
 
+  &:hover {
+    color: $form-bg;
+  }
+
   &:focus, &:focus-visible, &:active {
     outline: none;
     border: 0;
@@ -22,6 +26,7 @@
     background: transparent;
     border: none;
     color: $white;
+
     &:hover, :focus {
       color: $base;
     }

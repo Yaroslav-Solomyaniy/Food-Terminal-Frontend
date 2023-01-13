@@ -54,10 +54,11 @@ const AuthProvider = ({ children }: { children: JSX.Element; }): JSX.Element => 
   }, []);
 
   const logOut = () => {
+    setUser(null);
+    navigate('/', { replace: true });
     sessionStorage.clear();
     localStorage.clear();
-    navigate('/', { replace: true });
-    setUser(null);
+    Message('Ви покинули систему', 'info');
   };
 
   return (

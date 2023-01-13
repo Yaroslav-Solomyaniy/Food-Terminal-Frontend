@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import {
   Discount,
   Exit,
@@ -11,8 +12,10 @@ import {
 } from '../SVG';
 import NavItem from './NavItem';
 import styles from './index.module.scss';
+import linkStyles from './NavItem/index.module.scss';
 import { checkLinksByRole } from '../../hooks/checkLinksByRole';
 import { AuthContext } from '../../context/Auth';
+import Button from '../Button';
 
 export interface IRoute {
   description: string;
@@ -61,7 +64,7 @@ const Routes: IRoute[] = [
 ];
 
 const Navigation = () => {
-  const { user } = AuthContext();
+  const { user, logOut } = AuthContext();
 
   return (
     <div className={styles.navbar}>
@@ -72,7 +75,14 @@ const Navigation = () => {
       </div>
       <div>
         <NavItem to="/profile" ico={<Profile />} />
-        <NavItem to="/" ico={<Exit />} isLogOut />
+        <div className={linkStyles.box}>
+          <Button
+            nameClass={clsx(linkStyles.link, styles.exit)}
+            onClick={logOut}
+          >
+            <Exit />
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import styles from './index.module.scss';
+import { AuthContext } from '../../../context/Auth';
 
 interface INavItem {
   to: string;
@@ -11,10 +12,12 @@ interface INavItem {
 const NavItem = ({ to, ico }: INavItem) => {
   const [isActive, setIsActive] = useState<boolean>();
   const location = useLocation();
+  const { logOut } = AuthContext();
 
   useEffect(() => {
     if (location.pathname === to) {
       setIsActive(true);
+      console.log(location.pathname);
     }
   }, [location.pathname, to]);
 

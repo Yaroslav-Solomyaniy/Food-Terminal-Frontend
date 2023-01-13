@@ -1,6 +1,10 @@
-.navbar{
+.navbar {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.exit {
+  box-shadow: none;
 }
